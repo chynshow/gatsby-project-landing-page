@@ -1,0 +1,16 @@
+// Base configuration
+@import "./variables.scss";
+@import "./mixins.scss";
+@import "./base.scss";
+// Components
+// Common
+@import "./../components/common/Button/";
+// Section Hero
+@import "./../components/Hero/";
+@import "./../components/Hero/Header/";
+@import "./../components/Hero/Header/Navigation/";
+@import "./../components/Hero/Header/OpenHourInfo/";
+@import "./../components/Hero/Header/PhoneInfo/";
+@import "./../components/Hero/Header/InfoBox/";
+@import "./../components/Hero/Header/Logo/";
+@import "./../components/Hero/TitleBox/";

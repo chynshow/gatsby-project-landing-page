@@ -1,0 +1,34 @@
+.c-hero-title-box {
+  min-height: 74vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &__title {
+    padding: 1.5rem 0;
+    font-size: 5.5rem;
+  }
+  &__sub-title {
+    padding: 1rem 0;
+    font-size: 2.5rem;
+  }
+  &__btn-container {
+    display: flex;
+    padding-top: 4rem;
+  }
+
+  &__active-btn {
+    margin-right: 1rem;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-image: url("../assets/fragment-02.png");
+      background-repeat: no-repeat;
+      left: 50%;
+      top: 100%;
+      height: 10rem;
+      width: 40rem;
+    }
+  }
+}

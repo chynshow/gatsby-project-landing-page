@@ -1,0 +1,18 @@
+.c-btn {
+  border: 0;
+  outline: 0;
+  padding: 1.5rem;
+  border-radius: 3px;
+  background: transparent;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+
+  &--primary {
+    background: $color-light-1;
+  }
+  &--secondary {
+    background: rgba($color: $color-light-1, $alpha: 0.25);
+    color: $color-light-1;
+  }
+}
