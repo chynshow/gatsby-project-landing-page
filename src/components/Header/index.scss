@@ -3,12 +3,12 @@ $height-header-bottom: calc(100vh - #{$height-header-top});
 
 .c-header {
   @include bg-img("../assets/bg-02.jpg", cover, center);
-  border-bottom: 3px solid $color-light-1;
+  border-bottom: 1px dashed $color-light-1;
 
   &__top {
     // @include bg-img("../assets/bg-01.jpg", cover, center);
-    background: rgba($color: #121619, $alpha: 0.2);
-    border-bottom: 1px solid $color-dark-1;
+    background: rgba($color: $color-dark-2, $alpha: 0.2);
+    border-bottom: 1px dashed $color-dark-1;
   }
 
   &__top-inner {
@@ -48,7 +48,7 @@ $height-header-bottom: calc(100vh - #{$height-header-top});
     display: flex;
     flex-direction: column;
     z-index: 1;
-    animation: right 2000ms linear;
+    animation: fromLeft 2000ms linear;
   }
   &__btns-box {
     padding-top: 4rem;

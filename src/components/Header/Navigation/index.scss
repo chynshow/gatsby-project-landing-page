@@ -22,7 +22,9 @@
   }
 
   &__active-item {
-    border-bottom: 1px solid rgba($color: $color-light-1, $alpha: 0.5);
+    border: 1px dashed $color-dark-1;
+    border-bottom: 0;
+    border-radius: 3px 3px 0 0;
 
     // position: relative;
     // &::after {

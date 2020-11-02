@@ -3,35 +3,78 @@
   display: flex;
   position: relative;
 
-  &__left-bg,
-  &__right-bg {
+  &__decor-left-bg,
+  &__decor-right-bg {
     min-width: 50%;
     position: absolute;
     top: 0;
     bottom: 0;
   }
-  &__left-bg {
+
+  &__decor-left-bg {
     left: 0;
     @include bg-img("../assets/bg-01.jpg", cover, center);
   }
-  &__right-bg {
-    border-left: 3px solid $color-light-1;
+  &__decor-right-bg {
+    border-left: 1px dashed $color-light-1;
     right: 0;
     @include bg-img("../assets/bg-03.jpg", cover, center);
   }
 
-  &__decoration-icon-cook {
+  &__decor-icon-cook {
     position: absolute;
     left: 50%;
-    transform: translateX(-50%);
-    bottom: 95%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8rem;
+
+    &--opacity {
+      opacity: 1;
+    }
   }
 
-  &__decoration-icons-star {
+  &__decor-icons-star {
     padding-bottom: 7rem;
     svg {
+      width: 2.5rem;
       margin-right: 2rem;
     }
+  }
+
+  &__decor-text-1 {
+    top: 20%;
+    right: 8%;
+    transform: rotate(15deg);
+    animation: fromRight 3000ms linear;
+  }
+
+  &__decor-text-2 {
+    top: 27%;
+    left: 62%;
+    animation: fromRight 3000ms linear 50ms;
+    transform: rotate(-30deg);
+  }
+
+  &__decor-text-3 {
+    top: 85%;
+    left: 65%;
+    transform: rotate(15deg);
+    animation: fromRight 3000ms linear 100ms;
+  }
+
+  &__decor-text-4 {
+    top: 85%;
+    right: 10%;
+    transform: rotate(-20deg);
+    animation: fromRight 3000ms linear 150ms;
+  }
+
+  &__decor-text-5 {
+    top: 82%;
+    right: 8%;
+    animation: fromRight 3000ms linear 200ms;
+    transform: rotate(-25deg);
+    display: none;
   }
 
   &__inner-title {
@@ -40,9 +83,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    animation: fromLeft 3000ms linear;
   }
 
-  &__description {
+  &__desc {
     padding: 2rem 0;
     font-size: 2rem;
   }
