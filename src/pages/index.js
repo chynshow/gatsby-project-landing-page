@@ -1,11 +1,15 @@
 import React from "react"
 import "./../sass-config/index.scss"
-import Hero from "./../components/Hero"
+import Header from "./../components/Header"
+import About from "./../components/About"
+import Overlay from "./../components/Common/Overlay"
 
 export default function Home() {
   return (
     <div>
-      <Hero />
+      <Header />
+      {/* <About /> */}
+      <Overlay />
     </div>
   )
 }

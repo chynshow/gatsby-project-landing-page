@@ -1,0 +1,10 @@
+.c-logo {
+  &__container {
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: down 1000ms linear;
+  }
+}

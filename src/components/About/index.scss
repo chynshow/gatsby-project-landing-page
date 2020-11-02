@@ -1,0 +1,49 @@
+.c-about {
+  min-height: 90vh;
+  display: flex;
+  position: relative;
+
+  &__left-bg,
+  &__right-bg {
+    min-width: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+  }
+  &__left-bg {
+    left: 0;
+    @include bg-img("../assets/bg-01.jpg", cover, center);
+  }
+  &__right-bg {
+    border-left: 3px solid $color-light-1;
+    right: 0;
+    @include bg-img("../assets/bg-03.jpg", cover, center);
+  }
+
+  &__decoration-icon-cook {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 95%;
+  }
+
+  &__decoration-icons-star {
+    padding-bottom: 7rem;
+    svg {
+      margin-right: 2rem;
+    }
+  }
+
+  &__inner-title {
+    min-height: 100%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__description {
+    padding: 2rem 0;
+    font-size: 2rem;
+  }
+}

@@ -2,15 +2,18 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 @import "./base.scss";
+@import "./animations.scss";
 // Components
 // Common
-@import "./../components/common/Button/";
-// Section Hero
-@import "./../components/Hero/";
-@import "./../components/Hero/Header/";
-@import "./../components/Hero/Header/Navigation/";
-@import "./../components/Hero/Header/OpenHourInfo/";
-@import "./../components/Hero/Header/PhoneInfo/";
-@import "./../components/Hero/Header/InfoBox/";
-@import "./../components/Hero/Header/Logo/";
-@import "./../components/Hero/TitleBox/";
+@import "./../components/Common/Overlay/";
+@import "./../components/Common/Button/";
+@import "./../components/Common/Title/";
+@import "./../components/Common/SubTitle/";
+@import "./../components/Common/InfoBox/";
+@import "./../components/Common/Logo/";
+
+// Section Header
+@import "./../components/Header/";
+@import "./../components/Header/Navigation/";
+// Section About
+@import "./../components/About/";

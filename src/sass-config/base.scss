@@ -14,6 +14,11 @@ h4,
 h5,
 h6 {
   font-weight: 400;
+  line-height: $heading-line-height;
+}
+
+p {
+  line-height: $paragraph-line-height;
 }
 
 html {
@@ -26,7 +31,9 @@ body {
   color: $color-light-1;
 }
 
-.l-layout-container {
+.l-container {
   max-width: 80%;
   margin: 0 auto;
+  // border: 1px dashed yellow;
+  z-index: 1;
 }
