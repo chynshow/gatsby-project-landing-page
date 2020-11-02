@@ -1,5 +1,5 @@
 .c-about {
-  min-height: 90vh;
+  min-height: 75vh;
   display: flex;
   position: relative;
 
@@ -27,6 +27,7 @@
     top: 50%;
     transform: translate(-50%, -50%);
     width: 8rem;
+    display: none;
 
     &--opacity {
       opacity: 1;
@@ -34,7 +35,6 @@
   }
 
   &__decor-icons-star {
-    padding-bottom: 7rem;
     svg {
       width: 2.5rem;
       margin-right: 2rem;
@@ -77,17 +77,17 @@
     display: none;
   }
 
-  &__inner-title {
-    min-height: 100%;
-    width: 40%;
+  &__inner {
     display: flex;
+    animation: fromLeft 3000ms linear;
+    z-index: 1;
+  }
+  &__desc-box {
+    display: flex;
+    padding: 2rem 10rem;
+    width: 50%;
     flex-direction: column;
     justify-content: center;
-    animation: fromLeft 3000ms linear;
-  }
-
-  &__desc {
-    padding: 2rem 0;
-    font-size: 2rem;
+    align-items: center;
   }
 }

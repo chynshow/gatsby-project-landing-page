@@ -1,4 +1,4 @@
-$height-header-top: 25vh;
+$height-header-top: 30vh;
 $height-header-bottom: calc(100vh - #{$height-header-top});
 
 .c-header {
@@ -6,9 +6,9 @@ $height-header-bottom: calc(100vh - #{$height-header-top});
   border-bottom: 1px dashed $color-light-1;
 
   &__top {
-    // @include bg-img("../assets/bg-01.jpg", cover, center);
-    background: rgba($color: $color-dark-2, $alpha: 0.2);
-    border-bottom: 1px dashed $color-dark-1;
+    @include bg-img("../assets/bg-01.jpg", cover, center);
+    // background: rgba($color: $color-dark-2, $alpha: 0.2);
+    border-bottom: 1px dashed $color-light-1;
   }
 
   &__top-inner {

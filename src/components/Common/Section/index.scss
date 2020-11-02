@@ -1,0 +1,23 @@
+.c-section {
+  min-height: 80vh;
+  // border: 1px solid red;
+  position: relative;
+  display: flex;
+  &__content {
+    flex-basis: 50%;
+    @include bg-img("../assets/bg-01.jpg", cover, center);
+  }
+
+  &__decor-img {
+    border: 1px solid yellow;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      border-radius: 3px;
+      width: 100%;
+    }
+  }
+}
