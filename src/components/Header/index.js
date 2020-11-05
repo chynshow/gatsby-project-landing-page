@@ -21,7 +21,7 @@ const Header = () => {
             />
             <div className="c-header__logo-nav-box">
               <Logo />
-              <Navigation />
+              {/* <Navigation /> */}
             </div>
             <InfoBox
               className="c-header__info-box"
@@ -35,7 +35,9 @@ const Header = () => {
         <div className="l-container">
           <div className="c-header__bottom-inner">
             <div className="c-header__title-box">
-              <Title>Tasty food. Perfect service. Happy people.</Title>
+              <Title className="c-header__title">
+                Tasty food. Perfect service. Happy people.
+              </Title>
               <SubTitle>Italian pizza with italian products.</SubTitle>
               <div className="c-header__btns-box">
                 <Button className="c-btn--primary c-header__action-btn">

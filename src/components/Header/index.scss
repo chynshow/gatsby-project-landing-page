@@ -5,10 +5,14 @@ $height-header-bottom: calc(100vh - #{$height-header-top});
   @include bg-img("../assets/bg-02.jpg", cover, center);
   border-bottom: 1px dashed $color-light-1;
 
+  &__title {
+    text-align: start;
+  }
+
   &__top {
-    @include bg-img("../assets/bg-01.jpg", cover, center);
-    // background: rgba($color: $color-dark-2, $alpha: 0.2);
-    border-bottom: 1px dashed $color-light-1;
+    border-bottom: 1px solid $color-dark-2;
+    background: rgba($color: $color-dark-3, $alpha: 0.8);
+    // @include bg-img("../assets/bg-001.jpg", cover, center);
   }
 
   &__top-inner {

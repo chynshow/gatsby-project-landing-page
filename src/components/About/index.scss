@@ -1,38 +1,10 @@
 .c-about {
-  min-height: 75vh;
-  display: flex;
   position: relative;
-
-  &__decor-left-bg,
-  &__decor-right-bg {
-    min-width: 50%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-  }
-
-  &__decor-left-bg {
-    left: 0;
-    @include bg-img("../assets/bg-01.jpg", cover, center);
-  }
-  &__decor-right-bg {
-    border-left: 1px dashed $color-light-1;
-    right: 0;
-    @include bg-img("../assets/bg-03.jpg", cover, center);
-  }
-
-  &__decor-icon-cook {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 8rem;
-    display: none;
-
-    &--opacity {
-      opacity: 1;
-    }
-  }
+  height: 100vh;
+  display: flex;
+  @include bg-img("../assets/bg-01.jpg", cover, center);
+  // background: $color-light-1;
+  // color: $color-dark-1;
 
   &__decor-icons-star {
     svg {
@@ -78,16 +50,61 @@
   }
 
   &__inner {
+    // border: 1px solid red;
+    height: 100%;
+    // padding: 8rem 2rem;
     display: flex;
+    justify-content: center;
+
     animation: fromLeft 3000ms linear;
     z-index: 1;
   }
-  &__desc-box {
+  &__desc-container {
     display: flex;
     padding: 2rem 10rem;
-    width: 50%;
+    min-width: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  &__img-container {
+    position: relative;
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    width: 50rem;
+  }
+
+  &__decor-line-01,
+  &__decor-line-02 {
+    position: absolute;
+    fill: $color-light-1;
+  }
+
+  &__decor-line-01 {
+    bottom: 40%;
+    left: 10%;
+  }
+  &__decor-line-02 {
+    top: 40%;
+    right: 10%;
+  }
+
+  &__test-svg-1 {
+    position: absolute;
+    top: 40%;
+    width: 5rem;
+    margin: 5rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+    transform: scale(1);
+    &:active {
+      transform: scale(1.025);
+    }
   }
 }
