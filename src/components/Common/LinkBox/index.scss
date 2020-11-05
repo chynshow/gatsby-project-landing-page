@@ -1,0 +1,15 @@
+a {
+  text-decoration: none;
+  color: $color-light-1;
+}
+
+.c-link-box {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+
+  &__text {
+    margin-left: 1rem;
+  }
+}

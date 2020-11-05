@@ -14,11 +14,6 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <About />
-      <Products />
-      <Menu />
-      <Delivery />
-      <Footer />
     </div>
   )
 }
