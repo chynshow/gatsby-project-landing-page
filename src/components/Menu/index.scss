@@ -11,6 +11,9 @@
 
   &__decor-icons-star {
     padding: 2rem 0;
+    svg {
+      fill: $color-dark-1;
+    }
   }
 
   &__decor-star {
@@ -18,6 +21,12 @@
     margin: 0 0.5rem;
   }
 
+  &__title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   &__filter-container {
     padding: 2rem 0;
     display: flex;
@@ -26,9 +35,19 @@
     width: 100%;
 
     button {
-      margin: 0 0.5rem;
+      margin: 0.5rem;
       min-width: fit-content;
       background: rgba($color: $color-dark-1, $alpha: 1);
+
+      &:nth-child(3) {
+        background: transparent;
+        border: 1px dashed #633e68;
+        color: #633e68;
+      }
+    }
+
+    @include respond(mobileL) {
+      flex-direction: column;
     }
   }
 
@@ -51,6 +70,9 @@
     flex-basis: 50%;
     display: flex;
     flex-direction: column;
+    @include respond(mobileL) {
+      flex-basis: 100%;
+    }
   }
 
   &__item-container {
@@ -63,13 +85,63 @@
     font-size: $font-size-xxl;
   }
 
-  &__item-desc {
-  }
-
   &__item-price {
     display: flex;
     margin-left: 1rem;
     font-size: $font-size-xl;
     // border: 1px solid yellow;
+  }
+
+  &__info-box svg {
+    fill: $color-dark-1;
+  }
+
+  &__delivery-box {
+    border: 1px dashed $color-dark-1;
+    margin-top: 1.5rem;
+    display: flex;
+    position: relative;
+  }
+
+  &__icon-truck {
+    position: absolute;
+    bottom: 80%;
+    left: 90%;
+  }
+
+  &__delivery-btn {
+    background: red;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background: $color-dark-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
+    z-index: 2;
+
+    svg {
+      width: 5rem;
+      fill: $color-light-1;
+    }
+  }
+  &__icon-arrow-left,
+  &__icon-arrow-right {
+    opacity: 1;
+    color: $color-dark-1;
+    svg {
+      fill: $color-dark-1;
+    }
+  }
+
+  &__icon-arrow-right {
+    right: 2%;
+  }
+  &__icon-arrow-left {
+    left: 2%;
   }
 }

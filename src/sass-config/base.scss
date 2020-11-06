@@ -7,34 +7,35 @@
   box-sizing: border-box;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400;
-  line-height: $heading-line-height;
-}
-
-section {
-  // border-bottom: 2px dashed $color-light-1;
-}
-
 html {
   font-size: $font-base-size;
+  @include respond(tablet) {
+    font-size: 61%;
+  }
+  @include respond(mobileL) {
+    font-size: 40%;
+  }
+  // @include respond(mobileM) {
+  //   font-size: 57%;
+  // }
+  // @include respond(mobileS) {
+  //   font-size: 55%;
+  // }
 }
 
 body {
   font-family: $font-family, sans-serif;
-  font-size: $font-size-md;
   color: $color-light-1;
   background: $color-dark-1;
+  font-size: $font-size-md;
 }
 
 .l-container {
-  max-width: 80%;
+  width: 80%;
   margin: 0 auto;
   // border: 1px dashed yellow;
-  // z-index: 1;
+
+  @include respond(mobileL) {
+    width: 70%;
+  }
 }

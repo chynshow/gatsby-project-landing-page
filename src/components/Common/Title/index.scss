@@ -1,3 +1,12 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: $heading-line-height;
+}
 .c-title {
   padding: 1rem 0;
   font-size: $font-title;

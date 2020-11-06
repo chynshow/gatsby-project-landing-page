@@ -7,6 +7,12 @@
   text-transform: uppercase;
   cursor: pointer;
   font-family: inherit;
+  transition: 0.2s ease;
+  transform: scale(1);
+
+  &:active {
+    transform: scale(1.2);
+  }
 
   &--primary {
     background: $color-light-1;

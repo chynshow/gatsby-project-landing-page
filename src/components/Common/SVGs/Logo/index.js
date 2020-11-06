@@ -1,12 +1,13 @@
 import React from "react"
 
-const Logo = () => {
+const Logo = ({ className }) => {
   return (
     <svg
       width="400"
       viewBox="0 0 237 140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className={className}
     >
       <rect
         x="2.09291"

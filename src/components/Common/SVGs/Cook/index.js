@@ -1,13 +1,12 @@
 import React from "react"
 
-const Cook = ({ className, width }) => {
+const Cook = ({ className }) => {
   return (
     <svg
-      width={width || 32}
       viewBox="0 0 91 86"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={className ? `c-icon ${className}` : "c-icon"}
     >
       <path
         fill-rule="evenodd"

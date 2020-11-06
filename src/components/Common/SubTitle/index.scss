@@ -2,4 +2,7 @@
   padding: 0.5rem 0;
   font-size: $font-sub-title;
   text-transform: uppercase;
+  @include respond(mobileL) {
+    font-size: 1.5rem;
+  }
 }

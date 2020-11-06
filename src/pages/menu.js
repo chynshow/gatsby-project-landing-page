@@ -1,8 +1,14 @@
-import React from "react"
+import React, { useState } from "react"
 import Button from "./../components/Common/Button"
 import SubTitle from "./../components/Common/SubTitle"
 import Title from "./../components/Common/Title"
 import SVGStar from "./../components/Common/SVGs/Star"
+import Truck from "./../components/Common/SVGs/Truck"
+import InfoBox from "./../components/Common/InfoBox"
+import Clock from "./../components/Common/SVGs/Clock"
+import Phone from "./../components/Common/SVGs/Phone"
+import ArrowLink from "./../components/Common/ArrowLink"
+import Overlay from "./../components/Common/Overlay"
 
 const menu = {
   pizza: [
@@ -129,6 +135,7 @@ const menu = {
 }
 
 const Menu = () => {
+  const [showDeliveryInfo, setShowDeliveryInfo] = useState(false)
   return (
     <section className="c-menu">
       <div className="l-container">
@@ -138,7 +145,28 @@ const Menu = () => {
           <MenuItems menu={menu} />
         </div>
       </div>
-      {/* <Overlay /> */}
+      <ArrowLink
+        className="c-menu__icon-arrow-right"
+        to="/"
+        text={<SubTitle>Home</SubTitle>}
+        direction="right"
+      />
+      <ArrowLink
+        className="c-menu__icon-arrow-left"
+        text={<SubTitle>About us</SubTitle>}
+        to="/about"
+        direction="left"
+      />
+      <Button
+        className="c-btn--primary c-menu__delivery-btn"
+        onClick={() => setShowDeliveryInfo(!showDeliveryInfo)}
+      >
+        <Truck />
+      </Button>
+      <Delivery className={showDeliveryInfo ? "c-delivery--active" : null} />
+      {showDeliveryInfo && (
+        <Overlay onClick={() => setShowDeliveryInfo(!showDeliveryInfo)} />
+      )}
     </section>
   )
 }
@@ -166,10 +194,10 @@ const Stars = () => (
 )
 
 const MenuTitle = () => (
-  <div className="c-memu__title-container">
+  <div className="c-menu__title-container">
     <Title>Our offers.</Title>
-    <SubTitle>find your favorite dishes.</SubTitle>
     <Stars />
+    <SubTitle>find your favorite dishes.</SubTitle>
   </div>
 )
 
@@ -215,3 +243,23 @@ const MenuItems = ({ menu }) => (
     <div className="c-menu__dodatki"></div>
   </div>
 )
+
+const Delivery = ({ className }) => {
+  return (
+    <section className={className ? `c-delivery ${className}` : "c-delivery"}>
+      <Title>Order Now</Title>
+      <Truck className="c-delivery__icon" />
+      <SubTitle>Best pizza means - hot pizza.</SubTitle>
+      <InfoBox
+        className="c-delivery__info-box"
+        icon={<Clock />}
+        text="10:00 A.M. - 22:00 P.M."
+      />
+      <InfoBox
+        className="c-delivery__info-box"
+        icon={<Phone />}
+        text="+48 555 555 555"
+      />
+    </section>
+  )
+}

@@ -1,4 +1,5 @@
 // Base configuration
+@import "./mediaQueries.scss";
 @import "./variables.scss";
 @import "./mixins.scss";
 @import "./base.scss";
@@ -12,16 +13,12 @@
 @import "./../components/Common/Paragraph/";
 @import "./../components/Common/InfoBox/";
 @import "./../components/Common/LinkBox/";
-@import "./../components/Common/Logo/";
-@import "./../components/Common/TextFragment/";
-@import "./../components/Common/Section/";
-@import "./../components/Common/SVGs/DecorLine/";
+@import "./../components/Common/Icon/";
+@import "./../components/Common/ArrowLink/";
 
 // Sections
 @import "./../components/Header/";
-@import "./../components/Header/Navigation/";
 @import "./../components/About/";
 @import "./../components/Products/";
-@import "./../components/Menu/";
 @import "./../components/Delivery/";
-@import "./../components/Footer/";
+@import "./../components/Menu/";

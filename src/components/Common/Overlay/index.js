@@ -1,7 +1,12 @@
 import React from "react"
 
-const Overlay = () => {
-  return <div className="c-overlay" />
+const Overlay = ({ className, onClick }) => {
+  return (
+    <div
+      className={className ? `c-overlay ${className}` : "c-overlay"}
+      onClick={onClick}
+    />
+  )
 }
 
 export default Overlay
