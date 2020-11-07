@@ -26,12 +26,12 @@ body {
   color: $color-light-1;
   background: $color-dark-1;
   font-size: 1.6rem;
+  overflow-x: hidden;
 }
 
 .l-container {
   width: 80%;
   margin: 0 auto;
-  border: 1px dashed yellow;
 
   @include respond(tablet) {
     width: 70%;
@@ -40,4 +40,12 @@ body {
   @include respond(mobileS) {
     width: 65%;
   }
+}
+
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-light-1;
 }

@@ -134,8 +134,7 @@
     position: fixed;
     bottom: 5%;
     right: 5%;
-    width: 8rem;
-    height: 8rem;
+    @include box(7rem, 7rem);
     border-radius: 50%;
     background: $color-btn-spicy;
     transition: 0.2s ease;
@@ -148,6 +147,12 @@
     }
     &:hover {
       transform: scale(1.1);
+    }
+    @include respond(mobileL) {
+      @include box(6rem, 6rem);
+      svg {
+        width: 4rem;
+      }
     }
   }
   &__icon-arrow-left,

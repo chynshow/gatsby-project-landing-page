@@ -6,6 +6,9 @@
   &__logo {
     max-width: 60%;
     animation: down 1s linear;
+    @include respond(mobileL) {
+      max-width: 70%;
+    }
   }
 
   &__bg-img {
@@ -17,6 +20,9 @@
     bottom: 0;
     right: 0;
     z-index: -1;
+    @include respond(mobileL) {
+      @include bg-img("../assets/bg-08.jpg", cover, center);
+    }
   }
 
   &__inner {
@@ -24,7 +30,10 @@
     width: 100%;
     background: rgba($color: $color-dark-3, $alpha: 0.5);
     @include flex(center, center, column);
-    justify-content: space-evenly;
+
+    @include respond(mobileL) {
+      min-height: 70vh;
+    }
   }
 
   &__info-container {
@@ -32,15 +41,16 @@
     display: flex;
     position: relative;
     animation: fromBottom 1s linear;
+
     @include respond(mobileL) {
-      padding: 0;
+      flex-direction: column;
     }
   }
 
   &__icon {
     font-size: 3.5rem;
     @include respond(mobileL) {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
   }
 
@@ -56,6 +66,9 @@
     svg {
       position: absolute;
       bottom: 90%;
+      @include respond(mobileL) {
+        bottom: 70%;
+      }
     }
   }
 }

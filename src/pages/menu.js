@@ -8,6 +8,7 @@ import Delivery from "./../components/Delivery"
 import MenuTitle from "./../components/Menu/MenuTitle"
 import MenuFilter from "./../components/Menu/MenuFilter"
 import MenuItems from "./../components/Menu/MenuItems"
+import { useEffect } from "react"
 
 const menu = {
   pizza: [
@@ -135,6 +136,15 @@ const menu = {
 
 const Menu = () => {
   const [showDeliveryInfo, setShowDeliveryInfo] = useState(false)
+
+  useEffect(() => {
+    if (showDeliveryInfo) {
+      document.body.style.overflowY = "hidden"
+    } else if (!showDeliveryInfo) {
+      document.body.style.overflowY = "scroll"
+    }
+  }, [showDeliveryInfo])
+
   return (
     <section className="c-menu">
       <div className="l-container">
