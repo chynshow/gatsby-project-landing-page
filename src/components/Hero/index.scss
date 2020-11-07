@@ -6,9 +6,6 @@
   &__logo {
     max-width: 60%;
     animation: down 1s linear;
-    @include respond(mobileL) {
-      max-width: 70%;
-    }
   }
 
   &__bg-img {
@@ -30,7 +27,6 @@
     width: 100%;
     background: rgba($color: $color-dark-3, $alpha: 0.5);
     @include flex(center, center, column);
-
     @include respond(mobileL) {
       min-height: 70vh;
     }
@@ -53,12 +49,22 @@
       font-size: 2.5rem;
     }
   }
+  &__icon-arrow-right,
+  &__icon-arrow-left {
+    animation: opacity 1s backwards 0.2s;
+  }
 
   &__icon-arrow-right {
     right: 2%;
+    @include respond(mobileS) {
+      right: 0.5%;
+    }
   }
   &__icon-arrow-left {
     left: 2%;
+    @include respond(mobileS) {
+      left: 0.5%;
+    }
   }
 
   &__arrow-left-title {

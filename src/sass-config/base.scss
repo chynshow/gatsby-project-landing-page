@@ -13,7 +13,7 @@ html {
     font-size: 61%;
   }
   @include respond(mobileL) {
-    font-size: 55%;
+    font-size: 50%;
   }
 
   @include respond(mobileS) {
@@ -24,7 +24,7 @@ html {
 body {
   font-family: $font-family, sans-serif;
   color: $color-light-1;
-  background: $color-dark-1;
+
   font-size: 1.6rem;
   overflow-x: hidden;
 }
@@ -38,7 +38,7 @@ body {
   }
 
   @include respond(mobileS) {
-    width: 65%;
+    width: 60%;
   }
 }
 

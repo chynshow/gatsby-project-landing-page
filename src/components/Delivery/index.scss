@@ -33,7 +33,7 @@
     fill: $color-btn-spicy;
 
     &--active {
-      animation: fromLeft 1s linear 200ms;
+      animation: fromLeftOpacity 1s linear 200ms backwards;
     }
   }
 

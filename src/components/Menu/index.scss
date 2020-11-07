@@ -5,7 +5,7 @@
   &__inner {
     padding: 4rem 0rem;
     @include flex(null, center, column);
-    animation: fromRight 2s linear;
+    animation: fromRight 1s linear;
   }
 
   &__title {
@@ -158,6 +158,7 @@
   &__icon-arrow-left,
   &__icon-arrow-right {
     opacity: 1;
+    animation: opacity 1s backwards 1s;
     color: $color-dark-1;
     svg {
       fill: $color-dark-1;
@@ -166,8 +167,14 @@
 
   &__icon-arrow-right {
     right: 2%;
+    @include respond(mobileS) {
+      right: 0.5%;
+    }
   }
   &__icon-arrow-left {
     left: 2%;
+    @include respond(mobileS) {
+      left: 0.5%;
+    }
   }
 }
