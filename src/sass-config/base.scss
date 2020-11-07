@@ -24,9 +24,8 @@ html {
 body {
   font-family: $font-family, sans-serif;
   color: $color-light-1;
-
+  background: $color-light-1;
   font-size: 1.6rem;
-  overflow-x: hidden;
 }
 
 .l-container {

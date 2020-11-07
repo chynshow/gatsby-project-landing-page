@@ -26,6 +26,9 @@
 
   &__icon {
     font-size: 3rem;
+    @include respond(mobileL) {
+      font-size: 3.5rem;
+    }
   }
 
   &__icon-truck {
@@ -33,7 +36,7 @@
     fill: $color-btn-spicy;
 
     &--active {
-      animation: fromLeftOpacity 1s linear 200ms backwards;
+      animation: fromLeftOpacity 0.8s linear 100ms backwards;
     }
   }
 

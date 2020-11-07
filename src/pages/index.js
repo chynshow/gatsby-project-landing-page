@@ -51,7 +51,7 @@ const Header = () => {
           to="/menu"
           text={
             <SubTitle className="c-hero__arrow-left-title">
-              <Cook />
+              <Cook className="c-hero__icon-cook" />
               Menu
             </SubTitle>
           }

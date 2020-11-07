@@ -5,12 +5,12 @@
 
   &__logo {
     max-width: 60%;
-    animation: down 1s linear;
+    animation: down 2s linear;
   }
 
   &__bg-img {
     @include bg-img("../assets/bg-05.jpg", cover, center);
-    animation: zoom 7s linear forwards;
+    animation: zoom 5s linear forwards;
     position: fixed;
     top: 0;
     left: 0;
@@ -28,7 +28,7 @@
     background: rgba($color: $color-dark-3, $alpha: 0.5);
     @include flex(center, center, column);
     @include respond(mobileL) {
-      min-height: 70vh;
+      min-height: 100vh;
     }
   }
 
@@ -36,7 +36,7 @@
     padding: 2rem;
     display: flex;
     position: relative;
-    animation: fromBottom 1s linear;
+    animation: fromBottom 2s linear;
 
     @include respond(mobileL) {
       flex-direction: column;
@@ -46,9 +46,10 @@
   &__icon {
     font-size: 3.5rem;
     @include respond(mobileL) {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
   }
+
   &__icon-arrow-right,
   &__icon-arrow-left {
     animation: opacity 1s backwards 0.2s;
@@ -73,7 +74,8 @@
       position: absolute;
       bottom: 90%;
       @include respond(mobileL) {
-        bottom: 70%;
+        bottom: 75%;
+        width: 2.5rem;
       }
     }
   }
