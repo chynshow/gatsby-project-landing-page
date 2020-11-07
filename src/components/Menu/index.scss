@@ -4,49 +4,66 @@
 
   &__inner {
     padding: 4rem 0rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    @include flex(null, center, column);
+    animation: fromRight 2s linear;
   }
 
-  &__decor-icons-star {
-    padding: 2rem 0;
-    svg {
-      fill: $color-dark-1;
-    }
-  }
-
-  &__decor-star {
-    width: 2rem;
-    margin: 0 0.5rem;
+  &__title {
+    padding: 0;
   }
 
   &__title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    @include flex(center, center, column);
   }
   &__filter-container {
     padding: 2rem 0;
-    display: flex;
-    // justify-content: space-evenly;
-    justify-content: center;
-    width: 100%;
+    @include flex(center, null, null);
 
     button {
-      margin: 0.5rem;
+      margin: 0.2rem;
       min-width: fit-content;
+      @include flex(center, center, null);
       background: rgba($color: $color-dark-1, $alpha: 1);
+
+      svg {
+        margin-left: 0.5rem;
+      }
+
+      &:nth-child(1) {
+        svg {
+          color: $color-btn-vege;
+        }
+      }
+
+      &:nth-child(2) {
+        svg {
+          color: $color-btn-hungry;
+        }
+      }
 
       &:nth-child(3) {
         background: transparent;
-        border: 1px dashed #633e68;
-        color: #633e68;
+        border: 1px dashed $color-dark-1;
+        color: $color-dark-1;
+      }
+      &:nth-child(4) {
+        background: transparent;
+        color: $color-dark-1;
+      }
+
+      &:nth-child(5) {
+        svg {
+          color: $color-btn-spicy;
+        }
+      }
+      &:nth-child(6) {
+        svg {
+          color: $color-btn-child;
+        }
       }
     }
 
-    @include respond(mobileL) {
+    @include respond(tablet) {
       flex-direction: column;
     }
   }
@@ -59,37 +76,41 @@
     flex-wrap: wrap;
   }
 
-  &__title {
-    // border: 1px solid red;
+  &__section-title {
     padding: 4rem 0;
-    border-bottom: 1px solid #fafafa;
+  }
+
+  &__section-icon {
+    margin-left: 1rem;
+    font-size: 4rem;
   }
 
   &__item {
     padding: 1rem 2rem;
+    @include flex(null, null, column);
     flex-basis: 50%;
-    display: flex;
-    flex-direction: column;
-    @include respond(mobileL) {
+
+    @include respond(tablet) {
       flex-basis: 100%;
     }
   }
 
   &__item-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__item-title {
-    font-size: $font-size-xxl;
+    @include flex(space-between, center, null);
   }
 
   &__item-price {
     display: flex;
     margin-left: 1rem;
-    font-size: $font-size-xl;
-    // border: 1px solid yellow;
+    background: $color-dark-1;
+    color: $color-light-1;
+    padding: 0.5rem;
+    border-radius: 2px;
+  }
+
+  &__item-title {
+    font-size: 2rem;
+    text-decoration: underline;
   }
 
   &__info-box svg {
@@ -110,23 +131,23 @@
   }
 
   &__delivery-btn {
-    background: red;
     position: fixed;
     bottom: 5%;
     right: 5%;
     width: 8rem;
     height: 8rem;
     border-radius: 50%;
-    background: $color-dark-1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
-    z-index: 2;
+    background: $color-btn-spicy;
+    transition: 0.2s ease;
+    @include flex(center, center, null);
+    box-shadow: 0px 4px 10px 0 rgba($color-dark-1, 0.1);
 
     svg {
       width: 5rem;
       fill: $color-light-1;
+    }
+    &:hover {
+      transform: scale(1.1);
     }
   }
   &__icon-arrow-left,

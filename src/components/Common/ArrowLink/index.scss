@@ -20,6 +20,13 @@
   @include respond(laptop) {
     opacity: 1;
     svg {
+      width: 4rem;
+    }
+  }
+
+  @include respond(mobileL) {
+    opacity: 1;
+    svg {
       width: 2rem;
     }
   }

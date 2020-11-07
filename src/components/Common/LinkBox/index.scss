@@ -1,15 +1,12 @@
 a {
   text-decoration: none;
-  color: $color-light-1;
+  color: inherit;
 }
 
 .c-link-box {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
-  cursor: pointer;
+  @extend .c-info-box;
 
   &__text {
-    margin-left: 1rem;
+    @extend .c-info-box__text;
   }
 }

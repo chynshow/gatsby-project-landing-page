@@ -1,14 +1,13 @@
 import React, { useState } from "react"
 import Button from "./../components/Common/Button"
 import SubTitle from "./../components/Common/SubTitle"
-import Title from "./../components/Common/Title"
-import SVGStar from "./../components/Common/SVGs/Star"
 import Truck from "./../components/Common/SVGs/Truck"
-import InfoBox from "./../components/Common/InfoBox"
-import Clock from "./../components/Common/SVGs/Clock"
-import Phone from "./../components/Common/SVGs/Phone"
 import ArrowLink from "./../components/Common/ArrowLink"
 import Overlay from "./../components/Common/Overlay"
+import Delivery from "./../components/Delivery"
+import MenuTitle from "./../components/Menu/MenuTitle"
+import MenuFilter from "./../components/Menu/MenuFilter"
+import MenuItems from "./../components/Menu/MenuItems"
 
 const menu = {
   pizza: [
@@ -153,7 +152,7 @@ const Menu = () => {
       />
       <ArrowLink
         className="c-menu__icon-arrow-left"
-        text={<SubTitle>About us</SubTitle>}
+        text={<SubTitle>About</SubTitle>}
         to="/about"
         direction="left"
       />
@@ -163,7 +162,11 @@ const Menu = () => {
       >
         <Truck />
       </Button>
-      <Delivery className={showDeliveryInfo ? "c-delivery--active" : null} />
+      <Delivery
+        className={showDeliveryInfo ? "c-delivery--active" : null}
+        setShowDeliveryInfo={setShowDeliveryInfo}
+        showDeliveryInfo={showDeliveryInfo}
+      />
       {showDeliveryInfo && (
         <Overlay onClick={() => setShowDeliveryInfo(!showDeliveryInfo)} />
       )}
@@ -172,94 +175,3 @@ const Menu = () => {
 }
 
 export default Menu
-
-const MenuItem = ({ data }) => {
-  return (
-    <div className="c-menu__item">
-      <SubTitle className="c-menu__item-title">{data.name}</SubTitle>
-      <div className="c-menu__item-container">
-        <span className="c-menu__item-desc">{data.components}</span>
-        <span className="c-menu__item-price">0.00$</span>
-      </div>
-    </div>
-  )
-}
-
-const Stars = () => (
-  <div className="c-menu__decor-icons-star">
-    {[...Array(5)].map((star, idx) => (
-      <SVGStar key={idx} className="c-menu__decor-star" />
-    ))}
-  </div>
-)
-
-const MenuTitle = () => (
-  <div className="c-menu__title-container">
-    <Title>Our offers.</Title>
-    <Stars />
-    <SubTitle>find your favorite dishes.</SubTitle>
-  </div>
-)
-
-const MenuFilter = () => (
-  <div className="c-menu__filter-container">
-    <Button className="c-btn--secondary">I am vegaterian</Button>
-    <Button className="c-btn--secondary">I am hungry</Button>
-    <Button className="c-btn--secondary">
-      I am looking for something special{" "}
-    </Button>
-    <Button className="c-btn--secondary">something light</Button>
-    <Button className="c-btn--secondary">spicy food</Button>
-    <Button className="c-btn--secondary">for children</Button>
-  </div>
-)
-
-const MenuItems = ({ menu }) => (
-  <div className="c-menu__items">
-    <Title className="c-menu__title">Pizza</Title>
-    <div className="c-menu__pizzas">
-      {menu.pizza.map((pizza, idx) => (
-        <MenuItem key={idx} data={pizza} />
-      ))}
-    </div>
-    <Title className="c-menu__title">Gnocchi</Title>
-    <div className="c-menu__gnocchi">
-      {menu.gnocchi.map((gnocchi, idx) => (
-        <MenuItem key={idx} data={gnocchi} />
-      ))}
-    </div>
-    <Title className="c-menu__title">Insalata</Title>
-    <div className="c-menu__insalata">
-      {menu.insalata.map((insalata, idx) => (
-        <MenuItem key={idx} data={insalata} />
-      ))}
-    </div>
-    <Title className="c-menu__title">Antipasto</Title>
-    <div className="c-menu__antipasto">
-      {menu.insalata.map((antipasto, idx) => (
-        <MenuItem key={idx} data={antipasto} />
-      ))}
-    </div>
-    <div className="c-menu__dodatki"></div>
-  </div>
-)
-
-const Delivery = ({ className }) => {
-  return (
-    <section className={className ? `c-delivery ${className}` : "c-delivery"}>
-      <Title>Order Now</Title>
-      <Truck className="c-delivery__icon" />
-      <SubTitle>Best pizza means - hot pizza.</SubTitle>
-      <InfoBox
-        className="c-delivery__info-box"
-        icon={<Clock />}
-        text="10:00 A.M. - 22:00 P.M."
-      />
-      <InfoBox
-        className="c-delivery__info-box"
-        icon={<Phone />}
-        text="+48 555 555 555"
-      />
-    </section>
-  )
-}

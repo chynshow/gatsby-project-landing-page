@@ -1,5 +1,7 @@
-.c-starts {
-  color: #333;
+.c-stars {
+  padding: 1rem;
   &__item {
+    color: $color-dark-1;
+    margin: 0 0.5rem;
   }
 }

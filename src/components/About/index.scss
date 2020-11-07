@@ -3,23 +3,15 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
   position: relative;
   min-height: 100vh;
   display: flex;
-  @include bg-img("../assets/bg-001.jpg", cover, center);
   background: $color-light-1;
   color: $color-dark-1;
-
-  &__decor-icons-star {
-    svg {
-      fill: $color-dark-1;
-      width: 2.5rem;
-      margin-right: 2rem;
-    }
-  }
 
   &__decor-fragment {
     position: absolute;
     top: 35%;
     left: 45%;
     fill: $color-dark-1;
+    max-width: 15%;
     animation: scale 2s linear;
 
     @include respond(laptop) {
@@ -29,11 +21,9 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
 
   &__inner {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, column);
     height: 100%;
+    animation: fromRight 1s linear;
   }
 
   &__us,
@@ -45,19 +35,9 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
   }
 
   &__desc-container {
-    display: flex;
     padding: 2rem 10rem;
     min-width: 50%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &:nth-child(1) {
-      animation: fromLeft 3s linear;
-    }
-    &:nth-child(2) {
-      animation: fromRight 3s linear;
-    }
+    @include flex(center, center, column);
 
     @include respond(laptop) {
       padding: 4rem 0;
@@ -68,9 +48,7 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
   &__img-container {
     position: relative;
     min-width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, null);
     animation: scale 2s linear;
 
     @include respond(laptop) {
@@ -92,12 +70,6 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
     }
   }
 
-  &__icon-decor-flag {
-    box-shadow: $about-box-shadow;
-    @include respond(mobileL) {
-      width: 90%;
-    }
-  }
   &__icon-arrow-right,
   &__icon-arrow-left {
     opacity: 1;
@@ -120,5 +92,17 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
       position: absolute;
       bottom: 90%;
     }
+  }
+
+  &__producers-block {
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 10rem;
+    margin-right: 2rem;
+    filter: grayscale(100%);
   }
 }

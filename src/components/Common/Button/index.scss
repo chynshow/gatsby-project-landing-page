@@ -1,7 +1,7 @@
 .c-btn {
   border: 0;
   outline: 0;
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 3px;
   background: transparent;
   text-transform: uppercase;
@@ -9,6 +9,7 @@
   font-family: inherit;
   transition: 0.2s ease;
   transform: scale(1);
+  font-size: inherit;
 
   &:active {
     transform: scale(1.2);

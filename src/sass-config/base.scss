@@ -13,29 +13,31 @@ html {
     font-size: 61%;
   }
   @include respond(mobileL) {
-    font-size: 40%;
+    font-size: 55%;
   }
-  // @include respond(mobileM) {
-  //   font-size: 57%;
-  // }
-  // @include respond(mobileS) {
-  //   font-size: 55%;
-  // }
+
+  @include respond(mobileS) {
+    font-size: 45%;
+  }
 }
 
 body {
   font-family: $font-family, sans-serif;
   color: $color-light-1;
   background: $color-dark-1;
-  font-size: $font-size-md;
+  font-size: 1.6rem;
 }
 
 .l-container {
   width: 80%;
   margin: 0 auto;
-  // border: 1px dashed yellow;
+  border: 1px dashed yellow;
 
-  @include respond(mobileL) {
+  @include respond(tablet) {
     width: 70%;
+  }
+
+  @include respond(mobileS) {
+    width: 65%;
   }
 }

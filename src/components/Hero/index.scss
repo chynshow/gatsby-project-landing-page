@@ -1,11 +1,11 @@
-.c-header {
+.c-hero {
   min-height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
+  @include flex(null, center, null);
 
   &__logo {
-    max-width: 45%;
+    max-width: 60%;
+    animation: down 1s linear;
   }
 
   &__bg-img {
@@ -23,24 +23,25 @@
     min-height: 45vh;
     width: 100%;
     background: rgba($color: $color-dark-3, $alpha: 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__icon {
-    fill: $color-light-1;
-
-    @include respond(mobileL) {
-      width: 2rem;
-    }
+    @include flex(center, center, column);
+    justify-content: space-evenly;
   }
 
   &__info-container {
     padding: 2rem;
     display: flex;
     position: relative;
+    animation: fromBottom 1s linear;
+    @include respond(mobileL) {
+      padding: 0;
+    }
+  }
+
+  &__icon {
+    font-size: 3.5rem;
+    @include respond(mobileL) {
+      font-size: 2rem;
+    }
   }
 
   &__icon-arrow-right {
