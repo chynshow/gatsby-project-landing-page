@@ -12,61 +12,106 @@ import {
   faMobile,
   faClock,
 } from "@fortawesome/free-solid-svg-icons"
+import { graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
-const Header = () => {
+const Header = ({
+  data: {
+    site: {
+      info: {
+        location: { url, text },
+        phoneNum,
+        workHours,
+      },
+    },
+    logo: { absolutePath },
+    bgImg: { childImageSharp },
+  },
+}) => {
   return (
-    <header className="c-hero">
-      <div className="c-hero__inner">
-        <Logo className="c-hero__logo" />
-        <div className="c-hero__info-container">
-          <InfoBox
-            icon={
-              <FontAwesomeIcon className="c-icon c-hero__icon" icon={faClock} />
-            }
-            text="10:00 a.m. - 22:00 p.m."
-          />
-          <InfoBox
-            icon={
-              <FontAwesomeIcon
-                className="c-icon c-hero__icon"
-                icon={faMobile}
-              />
-            }
-            text="+48 555 555 555"
-          />
+    <BackgroundImage className="c-hero__bg-img" fluid={childImageSharp.fluid}>
+      <header className="c-hero">
+        <div className="c-hero__inner">
+          <Logo className="c-hero__logo" />
 
-          <LinkBox
-            icon={
-              <FontAwesomeIcon
-                className="c-icon c-hero__icon"
-                icon={faMapMarkerAlt}
-              />
+          <div className="c-hero__info-container">
+            <InfoBox
+              icon={
+                <FontAwesomeIcon
+                  className="c-icon c-hero__icon"
+                  icon={faClock}
+                />
+              }
+              text={workHours}
+            />
+            <InfoBox
+              icon={
+                <FontAwesomeIcon
+                  className="c-icon c-hero__icon"
+                  icon={faMobile}
+                />
+              }
+              text={phoneNum}
+            />
+
+            <LinkBox
+              icon={
+                <FontAwesomeIcon
+                  className="c-icon c-hero__icon"
+                  icon={faMapMarkerAlt}
+                />
+              }
+              href={url}
+              text={text}
+            />
+          </div>
+          <ArrowLink
+            className="c-hero__icon-arrow-left"
+            to="/menu"
+            text={
+              <SubTitle className="c-hero__arrow-left-title">
+                <Cook className="c-hero__icon-cook" />
+                Menu
+              </SubTitle>
             }
-            href="https://www.google.com/maps/place/plac+Grzybowy+18,+62-002+Z%C5%82otniki/@52.4797716,16.8559261,15z/data=!4m5!3m4!1s0x470443b601dabfbf:0xe463a8c955227328!8m2!3d52.4797716!4d16.8559261"
-            text="Złotniki, plac Grzybowy 18"
+            direction="left"
+          />
+          <ArrowLink
+            className="c-hero__icon-arrow-right"
+            text={<SubTitle>About</SubTitle>}
+            to="/about"
+            direction="right"
           />
         </div>
-        <ArrowLink
-          className="c-hero__icon-arrow-left"
-          to="/menu"
-          text={
-            <SubTitle className="c-hero__arrow-left-title">
-              <Cook className="c-hero__icon-cook" />
-              Menu
-            </SubTitle>
-          }
-          direction="left"
-        />
-        <ArrowLink
-          className="c-hero__icon-arrow-right"
-          text={<SubTitle>About</SubTitle>}
-          to="/about"
-          direction="right"
-        />
-      </div>
-      <div className="c-hero__bg-img" />
-    </header>
+      </header>
+    </BackgroundImage>
   )
 }
+
+export const data = graphql`
+  {
+    site {
+      info: siteMetadata {
+        phoneNum
+        location {
+          text
+          url
+        }
+        workHours
+      }
+    }
+    logo: file(relativePath: { eq: "logos/hero-logo-500*843.png" }) {
+      size
+      absolutePath
+    }
+    bgImg: file(relativePath: { eq: "imgs/hero-bg-1920*2320.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920, quality: 100) {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 export default Header

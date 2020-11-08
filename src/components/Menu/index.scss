@@ -5,7 +5,7 @@
   &__inner {
     padding: 4rem 0rem;
     @include flex(null, center, column);
-    animation: fromRight 1s linear;
+    // animation: fromRight 1s linear;
   }
 
   &__title {
@@ -14,10 +14,12 @@
 
   &__title-container {
     @include flex(center, center, column);
+    animation: fromRight 1s linear;
   }
   &__filter-container {
     padding: 2rem 0;
     @include flex(center, null, null);
+    animation: fromRight 1s linear;
 
     button {
       margin: 0.2rem;
@@ -111,6 +113,10 @@
   &__item-title {
     font-size: 2rem;
     text-decoration: underline;
+  }
+
+  &__items {
+    animation: fromRight 1s linear;
   }
 
   &__info-box svg {

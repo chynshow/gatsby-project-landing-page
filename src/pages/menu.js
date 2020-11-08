@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Button from "./../components/Common/Button"
 import SubTitle from "./../components/Common/SubTitle"
 import Truck from "./../components/Common/SVGs/Truck"
@@ -8,7 +8,6 @@ import Delivery from "./../components/Delivery"
 import MenuTitle from "./../components/Menu/MenuTitle"
 import MenuFilter from "./../components/Menu/MenuFilter"
 import MenuItems from "./../components/Menu/MenuItems"
-import { useEffect } from "react"
 
 const menu = {
   pizza: [
@@ -141,7 +140,7 @@ const Menu = () => {
     if (showDeliveryInfo) {
       document.body.style.overflowY = "hidden"
     } else if (!showDeliveryInfo) {
-      document.body.style.overflowY = "scroll"
+      document.body.style.overflowY = null
     }
   }, [showDeliveryInfo])
 
@@ -177,9 +176,7 @@ const Menu = () => {
         setShowDeliveryInfo={setShowDeliveryInfo}
         showDeliveryInfo={showDeliveryInfo}
       />
-      {showDeliveryInfo && (
-        <Overlay onClick={() => setShowDeliveryInfo(!showDeliveryInfo)} />
-      )}
+      {showDeliveryInfo && <Overlay />}
     </section>
   )
 }

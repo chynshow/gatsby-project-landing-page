@@ -8,11 +8,9 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
 
   &__decor-fragment {
     position: absolute;
-    top: 35%;
-    left: 45%;
     fill: $color-dark-1;
     max-width: 15%;
-    // animation: scale 1s linear;
+    animation: scale 1s linear;
 
     @include respond(laptop) {
       display: none;
@@ -21,8 +19,7 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
 
   &__inner {
     @include flex(center, center, column);
-    height: 100%;
-    animation: fromRight 1s linear;
+    min-height: 100%;
     @include respond(laptop) {
       padding: 2rem 0;
     }
@@ -31,6 +28,7 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
   &__us,
   &__products {
     display: flex;
+    animation: fromRight 1s linear;
     @include respond(laptop) {
       flex-direction: column;
     }
@@ -38,19 +36,20 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
 
   &__desc-container {
     padding: 2rem 10rem;
-    min-width: 50%;
+    flex-basis: 50%;
     @include flex(center, center, column);
+
     @include respond(laptop) {
       padding: 2rem 0;
-      max-width: 100%;
+      min-width: 100%;
     }
   }
 
   &__img-container {
     position: relative;
-    min-width: 50%;
-    @include flex(center, center, null);
+    flex-basis: 50%;
     animation: scale 1s linear;
+    @include flex(center, center, null);
 
     @include respond(laptop) {
       animation: none;
@@ -62,13 +61,14 @@ $about-box-shadow: 0px 4px 10px 0 rgba(32, 33, 36, 0.1);
   }
 
   &__img {
-    max-width: 45%;
+    min-width: 40%;
     border-radius: 5px;
-    @include respond(laptop) {
-      max-width: 50%;
-    }
+
     @include respond(tablet) {
-      max-width: 100%;
+      min-width: 60%;
+    }
+    @include respond(mobileL) {
+      min-width: 100%;
     }
   }
 

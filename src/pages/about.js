@@ -1,16 +1,17 @@
 import React from "react"
 import Title from "./../components/Common/Title"
 import Paragraph from "./../components/Common/Paragraph"
-import aboutImg from "./../assets/about-img-640*744.jpg"
-import aboutImg1 from "./../assets/about-img-640*959.jpg"
 import Fragment from "./../components/Common/SVGs/Fragment"
 import ArrowLink from "./../components/Common/ArrowLink"
 import SubTitle from "../components/Common/SubTitle"
 import Cook from "../components/Common/SVGs/Cook"
 import Stars from "./../components/Common/Stars"
 import Producers from "./../components/About/Producers"
+import { graphql } from "gatsby"
+import Image from "gatsby-image"
 
-const About = () => {
+const About = ({ data: { img01, img02 } }) => {
+  console.log(img01.childImageSharp.fluid, img02.childImageSharp.fluid)
   return (
     <section className="c-about">
       <div className="l-container">
@@ -28,12 +29,18 @@ const About = () => {
               </Paragraph>
             </div>
             <div className="c-about__img-container">
-              <img src={aboutImg} alt="Dish" className="c-about__img" />
+              <Image
+                className="c-about__img"
+                fluid={img01.childImageSharp.fluid}
+              />
             </div>
           </div>
           <div className="c-about__products">
             <div className="c-about__img-container">
-              <img src={aboutImg1} alt="Dish" className="c-about__img" />
+              <Image
+                className="c-about__img"
+                fluid={img02.childImageSharp.fluid}
+              />
             </div>
             <div className="c-about__desc-container">
               <Title>original italian products.</Title>
@@ -71,5 +78,24 @@ const About = () => {
     </section>
   )
 }
+
+export const data = graphql`
+  {
+    img01: file(relativePath: { eq: "imgs/about-img-640*744.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+    img02: file(relativePath: { eq: "imgs/about-img-640*959.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        }
+      }
+    }
+  }
+`
 
 export default About

@@ -42,9 +42,10 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 2px;
+  // width: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: $color-light-1;
+  background: red;
 }

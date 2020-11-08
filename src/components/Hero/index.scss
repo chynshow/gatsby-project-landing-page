@@ -1,6 +1,6 @@
 .c-hero {
   min-height: 100vh;
-  overflow: hidden;
+
   @include flex(null, center, null);
 
   &__logo {
@@ -9,17 +9,7 @@
   }
 
   &__bg-img {
-    @include bg-img("../assets/bg-05.jpg", cover, center);
-    animation: zoom 5s linear forwards;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
-    @include respond(mobileL) {
-      @include bg-img("../assets/bg-08.jpg", cover, center);
-    }
+    min-height: 100vh;
   }
 
   &__inner {
@@ -52,7 +42,7 @@
 
   &__icon-arrow-right,
   &__icon-arrow-left {
-    animation: opacity 1s backwards 0.2s;
+    animation: opacityHalf 1s backwards 0.2s;
   }
 
   &__icon-arrow-right {
