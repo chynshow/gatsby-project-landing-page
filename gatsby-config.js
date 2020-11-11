@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     title: "Włoszczyzna pizzeria",
     description: "This is pizzeria website",
-    siteUrl: "",
   },
   plugins: [
     `gatsby-transformer-sharp`,
