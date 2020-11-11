@@ -1,10 +1,16 @@
 module.exports = {
+  siteMetadata: {
+    title: "Włoszczyzna pizzeria",
+    description: "This is pizzeria website",
+    siteUrl: "",
+  },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     "gatsby-plugin-sass",
     "gatsby-plugin-fontawesome-css",
     `gatsby-transformer-json`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
