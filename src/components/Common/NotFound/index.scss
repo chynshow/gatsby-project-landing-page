@@ -1,0 +1,17 @@
+.c-not-found {
+  color: $color-dark-1;
+  min-height: 100vh;
+  @include flex(center, center, column);
+
+  &__arrow-link {
+    opacity: 1;
+    color: $color-dark-1;
+    svg {
+      fill: $color-dark-1;
+    }
+  }
+
+  &__icon {
+    font-size: 7rem;
+  }
+}

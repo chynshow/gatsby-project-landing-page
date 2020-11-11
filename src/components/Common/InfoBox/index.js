@@ -9,4 +9,4 @@ const InfoBox = ({ icon, text, className }) => {
   )
 }
 
-export default InfoBox
+export default React.memo(InfoBox)

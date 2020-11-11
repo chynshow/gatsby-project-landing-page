@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faClock,
   faMobile,
-  faMapMarkerAlt,
+  faMapMarkedAlt,
   faTimes,
 } from "@fortawesome/free-solid-svg-icons"
 import LinkBox from "./../Common/LinkBox"
@@ -12,8 +12,33 @@ import Title from "../Common/Title"
 import Truck from "../Common/SVGs/Truck"
 import SubTitle from "../Common/SubTitle"
 import InfoBox from "../Common/InfoBox"
+import { useStaticQuery, graphql } from "gatsby"
 
 const Delivery = ({ className, setShowDeliveryInfo, showDeliveryInfo }) => {
+  const {
+    deliveryInfo: { openHours, phoneNum },
+    deliveryZonesInfo: {
+      deliveryZones: { title, url },
+    },
+  } = useStaticQuery(graphql`
+    {
+      deliveryInfo: heroPageJson {
+        openHours
+        phoneNum
+        location {
+          title
+          url
+        }
+      }
+      deliveryZonesInfo: menuPageJson {
+        deliveryZones {
+          title
+          url
+        }
+      }
+    }
+  `)
+
   return (
     <section className={className ? `c-delivery ${className}` : "c-delivery"}>
       <Button
@@ -40,7 +65,7 @@ const Delivery = ({ className, setShowDeliveryInfo, showDeliveryInfo }) => {
               icon={faClock}
             />
           }
-          text="10:00 A.M. - 22:00 P.M."
+          text={openHours}
         />
         <InfoBox
           className="c-delivery__info-box"
@@ -50,21 +75,21 @@ const Delivery = ({ className, setShowDeliveryInfo, showDeliveryInfo }) => {
               icon={faMobile}
             />
           }
-          text="+48 555 555 555"
+          text={phoneNum}
         />
         <LinkBox
           icon={
             <FontAwesomeIcon
               className="c-icon c-delivery__icon"
-              icon={faMapMarkerAlt}
+              icon={faMapMarkedAlt}
             />
           }
-          href="https://www.google.com/maps/place/plac+Grzybowy+18,+62-002+Z%C5%82otniki/@52.4797716,16.8559261,15z/data=!4m5!3m4!1s0x470443b601dabfbf:0xe463a8c955227328!8m2!3d52.4797716!4d16.8559261"
-          text="Złotniki, plac Grzybowy 18"
+          href={url}
+          text={title}
         />
       </div>
     </section>
   )
 }
 
-export default Delivery
+export default React.memo(Delivery)

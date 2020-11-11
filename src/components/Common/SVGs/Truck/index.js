@@ -20,4 +20,4 @@ const Truck = ({ className }) => {
   )
 }
 
-export default Truck
+export default React.memo(Truck)

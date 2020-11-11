@@ -15,4 +15,4 @@ const ArrowRight = ({ className }) => {
   )
 }
 
-export default ArrowRight
+export default React.memo(ArrowRight)

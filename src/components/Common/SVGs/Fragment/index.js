@@ -25,4 +25,4 @@ const Fragment = ({ className }) => {
   )
 }
 
-export default Fragment
+export default React.memo(Fragment)

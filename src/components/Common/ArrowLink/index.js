@@ -25,15 +25,16 @@ const setDirection = (direction, text) => {
 }
 
 const ArrowLink = ({ to, children, text, direction, className }) => {
+  const style =
+    direction === "left"
+      ? "c-arrow-link c-arrow-link__left-direction"
+      : "c-arrow-link c-arrow-link__right-direction"
   return (
-    <Link
-      className={className ? `c-arrow-link ${className}` : "c-arrow-link"}
-      to={to}
-    >
+    <Link className={className ? `${style} ${className}` : style} to={to}>
       {setDirection(direction, text)}
       {children}
     </Link>
   )
 }
 
-export default ArrowLink
+export default React.memo(ArrowLink)

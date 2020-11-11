@@ -10,17 +10,14 @@
 
   svg {
     fill: $color-light-1;
-  }
-
-  &:hover {
-    opacity: 1;
-    transform: scale(1.1) translateY(-50%);
+    width: 3.5rem;
   }
 
   @include respond(laptop) {
     opacity: 1;
+    border: 0;
     svg {
-      width: 4rem;
+      width: 3rem;
     }
   }
 
@@ -28,6 +25,29 @@
     opacity: 1;
     svg {
       width: 2rem;
+    }
+  }
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1) translateY(-50%);
+  }
+
+  &__left-direction,
+  &__right-direction {
+    animation: opacity 0.7s backwards;
+  }
+
+  &__right-direction {
+    right: 2%;
+    @include respond(mobileS) {
+      right: 0.5%;
+    }
+  }
+  &__left-direction {
+    left: 2%;
+    @include respond(mobileS) {
+      left: 0.5%;
     }
   }
 }

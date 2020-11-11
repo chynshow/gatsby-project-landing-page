@@ -12,4 +12,4 @@ const Stars = ({ num = 5, className }) => {
   )
 }
 
-export default Stars
+export default React.memo(Stars)

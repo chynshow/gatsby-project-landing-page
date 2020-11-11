@@ -1,26 +1,30 @@
 import React from "react"
-import Logo01 from "./../../../assets/logo-01.png"
-import Logo02 from "./../../../assets/logo-02.png"
 import { useStaticQuery, graphql } from "gatsby"
+import Image from "gatsby-image"
 
 const Producers = () => {
-  const data = useStaticQuery(graphql`
+  const { logo01, logo02 } = useStaticQuery(graphql`
     {
-      allFile(filter: { relativeDirectory: { eq: "logos" } }) {
-        totalCount
-        nodes {
-          size
-          birthTime
-          absolutePath
+      logo01: file(relativePath: { eq: "about-img-logo-01-465*320.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
+      logo02: file(relativePath: { eq: "about-img-logo-02-243*245.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
         }
       }
     }
   `)
-  console.log(data)
   return (
-    <div className="c-about__products-block">
-      <img className="c-about__logo" src={Logo01} alt="" />
-      <img className="c-about__logo" src={Logo02} alt="" />
+    <div className="c-about__producers-block">
+      <Image className="c-about__logo" fluid={logo01.childImageSharp.fluid} />
+      <Image className="c-about__logo" fluid={logo02.childImageSharp.fluid} />
     </div>
   )
 }

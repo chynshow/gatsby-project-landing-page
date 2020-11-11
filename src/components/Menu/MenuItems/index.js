@@ -1,102 +1,83 @@
 import React from "react"
-import Title from "../../Common/Title"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faPizzaSlice,
   faLeaf,
   faCarrot,
-  faQuestion,
   faPlus,
 } from "@fortawesome/free-solid-svg-icons"
-import MenuItem from "./../MenuItem/"
 import { graphql, useStaticQuery } from "gatsby"
+import MenuSection from "./../MenuSection"
 
-const MenuItems = () => {
+const MenuItems = ({ filter }) => {
   const {
-    site: {
-      info: {
-        menu: { pizza, gnocchi, insalata, antipasto, dodatki },
-      },
-    },
+    menuInfo: { menu },
   } = useStaticQuery(graphql`
     {
-      site {
-        info: siteMetadata {
-          menu {
-            pizza {
-              name
-              description
-            }
-            gnocchi {
-              name
-              description
-            }
-            insalata {
-              name
-              description
-            }
-            antipasto {
-              name
-              description
-            }
-            dodatki
-          }
+      menuInfo: menuPageJson {
+        menu {
+          category
+          description
+          filterLabel
+          title
+          price
         }
       }
     }
   `)
 
+  const menuItemsFiltered =
+    filter !== "" ? menu.filter(item => item.filterLabel === filter) : menu
+
   return (
     <div className="c-menu__items">
-      <Title className="c-menu__section-title">
-        Pizza
-        <FontAwesomeIcon className="c-menu__section-icon" icon={faPizzaSlice} />
-      </Title>
-      <div className="c-menu__pizzas">
-        {pizza.map((pizza, idx) => (
-          <MenuItem key={idx} data={pizza} />
-        ))}
-      </div>
-      <Title className="c-menu__section-title">
-        Gnocchi
-        <FontAwesomeIcon className="c-menu__section-icon" icon={faQuestion} />
-      </Title>
-      <div className="c-menu__gnocchi">
-        {gnocchi.map((gnocchi, idx) => (
-          <MenuItem key={idx} data={gnocchi} />
-        ))}
-      </div>
-      <Title className="c-menu__section-title">
-        Insalata
-        <FontAwesomeIcon className="c-menu__section-icon" icon={faLeaf} />
-      </Title>
-      <div className="c-menu__insalata">
-        {insalata.map((insalata, idx) => (
-          <MenuItem key={idx} data={insalata} />
-        ))}
-      </div>
-      <Title className="c-menu__section-title">
-        Antipasto
-        <FontAwesomeIcon className="c-menu__section-icon" icon={faCarrot} />
-      </Title>
-      <div className="c-menu__antipasto">
-        {antipasto.map((antipasto, idx) => (
-          <MenuItem key={idx} data={antipasto} />
-        ))}
-      </div>
-      <div className="c-menu__dodatki">
-        <Title className="c-menu__section-title">
-          Dodatki
+      <MenuSection
+        title="Pizza"
+        icon={
+          <FontAwesomeIcon
+            className="c-menu__section-icon"
+            icon={faPizzaSlice}
+          />
+        }
+        menuItems={menuItemsFiltered}
+        filterLabel="Pizza"
+        filter={filter}
+      />
+      <MenuSection
+        title="Gnocchi"
+        menuItems={menuItemsFiltered}
+        filterLabel="Gnocchi"
+        filter={filter}
+      />
+      <MenuSection
+        title="Insalata"
+        icon={
+          <FontAwesomeIcon className="c-menu__section-icon" icon={faLeaf} />
+        }
+        menuItems={menuItemsFiltered}
+        filterLabel="Insalata"
+        filter={filter}
+      />
+      <MenuSection
+        title="Antipasto"
+        icon={
+          <FontAwesomeIcon className="c-menu__section-icon" icon={faCarrot} />
+        }
+        menuItems={menuItemsFiltered}
+        filterLabel="Antipasto"
+        filter={filter}
+      />
+      <MenuSection
+        title="Dodatki"
+        icon={
           <FontAwesomeIcon className="c-menu__section-icon" icon={faPlus} />
-        </Title>
-        <div className="c-menu__dodatki">
-          {dodatki.map((dodatki, idx) => (
-            <div key={idx}>{dodatki}</div>
-          ))}
-        </div>
-      </div>
+        }
+        menuItems={menuItemsFiltered}
+        filterLabel="Dodatki"
+        filter={filter}
+      />
     </div>
   )
 }
 
-export default MenuItems
+export default React.memo(MenuItems)

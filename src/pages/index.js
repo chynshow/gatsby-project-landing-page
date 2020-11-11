@@ -17,20 +17,17 @@ import BackgroundImage from "gatsby-background-image"
 
 const Header = ({
   data: {
-    site: {
-      info: {
-        location: { url, text },
-        phoneNum,
-        workHours,
-      },
+    heroInfo: {
+      openHours,
+      phoneNum,
+      location: { title, url },
     },
-    logo: { absolutePath },
     bgImg: { childImageSharp },
   },
 }) => {
   return (
     <BackgroundImage className="c-hero__bg-img" fluid={childImageSharp.fluid}>
-      <header className="c-hero">
+      <section className="c-hero">
         <div className="c-hero__inner">
           <Logo className="c-hero__logo" />
 
@@ -42,7 +39,7 @@ const Header = ({
                   icon={faClock}
                 />
               }
-              text={workHours}
+              text={openHours}
             />
             <InfoBox
               icon={
@@ -62,11 +59,11 @@ const Header = ({
                 />
               }
               href={url}
-              text={text}
+              text={title}
             />
           </div>
           <ArrowLink
-            className="c-hero__icon-arrow-left"
+            className="c-hero__arrow-link"
             to="/menu"
             text={
               <SubTitle className="c-hero__arrow-left-title">
@@ -77,34 +74,28 @@ const Header = ({
             direction="left"
           />
           <ArrowLink
-            className="c-hero__icon-arrow-right"
+            className="c-hero__arrow-link"
             text={<SubTitle>About</SubTitle>}
             to="/about"
             direction="right"
           />
         </div>
-      </header>
+      </section>
     </BackgroundImage>
   )
 }
 
 export const data = graphql`
   {
-    site {
-      info: siteMetadata {
-        phoneNum
-        location {
-          text
-          url
-        }
-        workHours
+    heroInfo: heroPageJson {
+      openHours
+      phoneNum
+      location {
+        title
+        url
       }
     }
-    logo: file(relativePath: { eq: "logos/hero-logo-500*843.png" }) {
-      size
-      absolutePath
-    }
-    bgImg: file(relativePath: { eq: "imgs/hero-bg-1920*2320.jpg" }) {
+    bgImg: file(relativePath: { eq: "hero-bg-1920*2320.jpg" }) {
       childImageSharp {
         fluid(maxWidth: 1920, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
@@ -114,4 +105,4 @@ export const data = graphql`
   }
 `
 
-export default Header
+export default React.memo(Header)

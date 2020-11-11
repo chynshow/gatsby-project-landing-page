@@ -4,4 +4,4 @@ const Overlay = ({ className }) => {
   return <div className={className ? `c-overlay ${className}` : "c-overlay"} />
 }
 
-export default Overlay
+export default React.memo(Overlay)

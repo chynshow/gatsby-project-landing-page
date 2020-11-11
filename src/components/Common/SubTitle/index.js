@@ -8,4 +8,4 @@ const SubTitle = ({ className, children }) => {
   )
 }
 
-export default SubTitle
+export default React.memo(SubTitle)

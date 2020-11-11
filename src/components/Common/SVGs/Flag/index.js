@@ -17,4 +17,4 @@ const Flag = ({ className }) => {
   )
 }
 
-export default Flag
+export default React.memo(Flag)

@@ -184,4 +184,4 @@ const Logo = ({ className }) => {
   )
 }
 
-export default Logo
+export default React.memo(Logo)

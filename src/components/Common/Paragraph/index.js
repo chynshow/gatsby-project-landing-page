@@ -8,4 +8,4 @@ const Paragraph = ({ children, className }) => {
   )
 }
 
-export default Paragraph
+export default React.memo(Paragraph)

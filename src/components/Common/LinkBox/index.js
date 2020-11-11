@@ -16,4 +16,4 @@ const LinkBox = ({ icon, text, className, href }) => {
   )
 }
 
-export default LinkBox
+export default React.memo(LinkBox)

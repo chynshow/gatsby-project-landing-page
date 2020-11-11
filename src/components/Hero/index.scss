@@ -34,27 +34,16 @@
   }
 
   &__icon {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     @include respond(mobileL) {
       font-size: 3rem;
     }
   }
 
-  &__icon-arrow-right,
-  &__icon-arrow-left {
-    animation: opacityHalf 1s backwards 0.2s;
-  }
-
-  &__icon-arrow-right {
-    right: 2%;
-    @include respond(mobileS) {
-      right: 0.5%;
-    }
-  }
-  &__icon-arrow-left {
-    left: 2%;
-    @include respond(mobileS) {
-      left: 0.5%;
+  &__arrow-link {
+    animation: opacityHalf 1s backward;
+    @include respond(tablet) {
+      animation: opacity 1s backwards;
     }
   }
 

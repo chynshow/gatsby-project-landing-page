@@ -8,4 +8,4 @@ const Title = ({ className, children, rest }) => {
   )
 }
 
-export default Title
+export default React.memo(Title)

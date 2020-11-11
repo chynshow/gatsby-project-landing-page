@@ -17,4 +17,4 @@ const Cook = ({ className }) => {
   )
 }
 
-export default Cook
+export default React.memo(Cook)

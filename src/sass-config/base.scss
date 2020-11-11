@@ -32,8 +32,12 @@ body {
   width: 80%;
   margin: 0 auto;
 
-  @include respond(tablet) {
+  @include respond(laptop) {
     width: 70%;
+  }
+
+  @include respond(tablet) {
+    width: 68%;
   }
 
   @include respond(mobileS) {
@@ -42,10 +46,9 @@ body {
 }
 
 ::-webkit-scrollbar {
-  // width: 2px;
+  width: 2px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $color-light-1;
-  background: red;
+  background: $color-dark-1;
 }
