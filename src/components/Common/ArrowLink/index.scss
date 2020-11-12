@@ -36,6 +36,10 @@
   &__left-direction,
   &__right-direction {
     animation: opacity 0.7s backwards;
+
+    @include respond(mobileL) {
+      animation: opacity 0.7s backwards 1s;
+    }
   }
 
   &__right-direction {

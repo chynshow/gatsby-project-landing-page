@@ -1,5 +1,4 @@
 import React from "react"
-import "./../sass-config/index.scss"
 import SubTitle from "./../components/Common/SubTitle"
 import InfoBox from "./../components/Common/InfoBox"
 import LinkBox from "./../components/Common/LinkBox"
@@ -14,6 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
+import Layout from "./../components/Common/Layout"
 
 const Header = ({
   data: {
@@ -26,62 +26,64 @@ const Header = ({
   },
 }) => {
   return (
-    <BackgroundImage className="c-hero__bg-img" fluid={childImageSharp.fluid}>
-      <section className="c-hero">
-        <div className="c-hero__inner">
-          <Logo className="c-hero__logo" />
+    <Layout>
+      <BackgroundImage className="c-hero__bg-img" fluid={childImageSharp.fluid}>
+        <section className="c-hero">
+          <div className="c-hero__inner">
+            <Logo className="c-hero__logo" />
 
-          <div className="c-hero__info-container">
-            <InfoBox
-              icon={
-                <FontAwesomeIcon
-                  className="c-icon c-hero__icon"
-                  icon={faClock}
-                />
-              }
-              text={openHours}
-            />
-            <InfoBox
-              icon={
-                <FontAwesomeIcon
-                  className="c-icon c-hero__icon"
-                  icon={faMobile}
-                />
-              }
-              text={phoneNum}
-            />
+            <div className="c-hero__info-container">
+              <InfoBox
+                icon={
+                  <FontAwesomeIcon
+                    className="c-icon c-hero__icon"
+                    icon={faClock}
+                  />
+                }
+                text={openHours}
+              />
+              <InfoBox
+                icon={
+                  <FontAwesomeIcon
+                    className="c-icon c-hero__icon"
+                    icon={faMobile}
+                  />
+                }
+                text={phoneNum}
+              />
 
-            <LinkBox
-              icon={
-                <FontAwesomeIcon
-                  className="c-icon c-hero__icon"
-                  icon={faMapMarkerAlt}
-                />
+              <LinkBox
+                icon={
+                  <FontAwesomeIcon
+                    className="c-icon c-hero__icon"
+                    icon={faMapMarkerAlt}
+                  />
+                }
+                href={url}
+                text={title}
+              />
+            </div>
+            <ArrowLink
+              className="c-hero__arrow-link"
+              to="/menu"
+              text={
+                <SubTitle className="c-hero__arrow-left-title">
+                  <Cook className="c-hero__icon-cook" />
+                  Menu
+                </SubTitle>
               }
-              href={url}
-              text={title}
+              direction="left"
+            />
+            <ArrowLink
+              className="c-hero__arrow-link"
+              text={<SubTitle>About</SubTitle>}
+              to="/about"
+              direction="right"
             />
           </div>
-          <ArrowLink
-            className="c-hero__arrow-link"
-            to="/menu"
-            text={
-              <SubTitle className="c-hero__arrow-left-title">
-                <Cook className="c-hero__icon-cook" />
-                Menu
-              </SubTitle>
-            }
-            direction="left"
-          />
-          <ArrowLink
-            className="c-hero__arrow-link"
-            text={<SubTitle>About</SubTitle>}
-            to="/about"
-            direction="right"
-          />
-        </div>
-      </section>
-    </BackgroundImage>
+        </section>
+      </BackgroundImage>
+    </Layout>
   )
 }
 
