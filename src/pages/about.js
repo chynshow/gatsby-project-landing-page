@@ -10,6 +10,7 @@ import Producers from "./../components/About/Producers"
 import { graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "./../components/Common/Layout"
+import SEO from "../components/Common/SEO"
 
 const About = ({
   data: {
@@ -25,6 +26,10 @@ const About = ({
 }) => {
   return (
     <Layout>
+      <SEO
+        title="About"
+        description="This is about page of pizzeria Włoszczyzna"
+      />
       <section className="c-about">
         <div className="l-container">
           <div className="c-about__inner">

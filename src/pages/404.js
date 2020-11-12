@@ -6,10 +6,15 @@ import SubTitle from "../components/Common/SubTitle"
 import Cook from "../components/Common/SVGs/Cook"
 import Title from "./../components/Common/Title"
 import Layout from "./../components/Common/Layout"
+import SEO from "../components/Common/SEO"
 
 const NotFound = () => {
   return (
     <Layout>
+      <SEO
+        title="Not Found"
+        description="This is not found page of pizzeria Włoszczyzna"
+      />
       <section className="c-not-found">
         <FontAwesomeIcon className="c-not-found__icon" icon={faTimes} />
         <Title>Page not found</Title>

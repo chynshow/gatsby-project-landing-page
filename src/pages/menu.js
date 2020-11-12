@@ -9,6 +9,7 @@ import MenuTitle from "./../components/Menu/MenuTitle"
 import MenuFilter from "./../components/Menu/MenuFilter"
 import MenuItems from "./../components/Menu/MenuItems"
 import Layout from "./../components/Common/Layout"
+import SEO from "../components/Common/SEO"
 
 const Menu = () => {
   const [showDeliveryInfo, setShowDeliveryInfo] = useState(false)
@@ -24,6 +25,10 @@ const Menu = () => {
 
   return (
     <Layout>
+      <SEO
+        title="Menu"
+        description="This is menu page of pizzeria Włoszczyzna"
+      />
       <section className="c-menu">
         <div className="l-container">
           <div className="c-menu__inner">

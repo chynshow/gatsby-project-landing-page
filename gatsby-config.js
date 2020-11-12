@@ -1,15 +1,20 @@
 module.exports = {
   siteMetadata: {
-    title: "Włoszczyzna pizzeria",
-    description: "This is pizzeria website",
+    title: "Włoszczyzna",
+    description: "This is pizzeria Włoszczyzna website",
+    siteUrl: "https://quirky-northcutt-2862d8.netlify.app",
+    image: "/img-seo.png",
+    twitterUsername: "@userName",
+    author: "Code",
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    "gatsby-plugin-sass",
-    "gatsby-plugin-fontawesome-css",
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-fontawesome-css`,
     `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
