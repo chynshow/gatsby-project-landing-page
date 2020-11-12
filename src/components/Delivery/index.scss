@@ -26,13 +26,6 @@
     }
   }
 
-  &__icon {
-    font-size: 3rem;
-    @include respond(mobileL) {
-      font-size: 3.5rem;
-    }
-  }
-
   &__icon-truck {
     width: 12rem;
     fill: $color-btn-spicy;

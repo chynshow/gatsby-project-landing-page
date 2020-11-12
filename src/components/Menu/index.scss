@@ -5,7 +5,6 @@
   &__inner {
     padding: 4rem 0rem;
     @include flex(null, center, column);
-    // animation: fromRight 1s linear;
   }
 
   &__title {

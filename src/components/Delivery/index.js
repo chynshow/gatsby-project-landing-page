@@ -59,31 +59,16 @@ const Delivery = ({ className, setShowDeliveryInfo, showDeliveryInfo }) => {
       <div className="c-delivery__info">
         <InfoBox
           className="c-delivery__info-box"
-          icon={
-            <FontAwesomeIcon
-              className="c-icon c-delivery__icon"
-              icon={faClock}
-            />
-          }
+          icon={<FontAwesomeIcon size="2x" icon={faClock} />}
           text={openHours}
         />
         <InfoBox
           className="c-delivery__info-box"
-          icon={
-            <FontAwesomeIcon
-              className="c-icon c-delivery__icon"
-              icon={faMobile}
-            />
-          }
+          icon={<FontAwesomeIcon size="2x" icon={faMobile} />}
           text={phoneNum}
         />
         <LinkBox
-          icon={
-            <FontAwesomeIcon
-              className="c-icon c-delivery__icon"
-              icon={faMapMarkedAlt}
-            />
-          }
+          icon={<FontAwesomeIcon size="2x" icon={faMapMarkedAlt} />}
           href={url}
           text={title}
         />

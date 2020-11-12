@@ -39,31 +39,16 @@ const Home = ({
 
             <div className="c-home__info-container">
               <InfoBox
-                icon={
-                  <FontAwesomeIcon
-                    className="c-icon c-home__icon"
-                    icon={faClock}
-                  />
-                }
+                icon={<FontAwesomeIcon icon={faClock} size="2x" />}
                 text={openHours}
               />
               <InfoBox
-                icon={
-                  <FontAwesomeIcon
-                    className="c-icon c-home__icon"
-                    icon={faMobile}
-                  />
-                }
+                icon={<FontAwesomeIcon icon={faMobile} size="2x" />}
                 text={phoneNum}
               />
 
               <LinkBox
-                icon={
-                  <FontAwesomeIcon
-                    className="c-icon c-home__icon"
-                    icon={faMapMarkerAlt}
-                  />
-                }
+                icon={<FontAwesomeIcon icon={faMapMarkerAlt} size="2x" />}
                 href={url}
                 text={title}
               />

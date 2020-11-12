@@ -33,13 +33,6 @@
     }
   }
 
-  &__icon {
-    font-size: 3.2rem;
-    @include respond(mobileL) {
-      font-size: 3rem;
-    }
-  }
-
   &__arrow-link {
     animation: opacityHalf 1s backward;
     @include respond(tablet) {
