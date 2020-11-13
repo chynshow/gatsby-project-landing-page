@@ -6,9 +6,9 @@
 
 <div>
  <p>
-<img src="demo-images/img-1.png" width="290px">
-<img src="demo-images/img-2.png" width="290px">
-<img src="demo-images/img-3.png" width="290px">
+<img src="demo-images/img-1.png" width="280px">
+<img src="demo-images/img-2.png" width="280px">
+<img src="demo-images/img-3.png" width="280px">
   </p>
 </div>
 
