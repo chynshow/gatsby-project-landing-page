@@ -1,4 +1,4 @@
-## Gatsby landing page
+## Pizzeria (landing page)
 
 > Static web site
 
