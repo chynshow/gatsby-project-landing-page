@@ -1,6 +1,6 @@
 ## Pizzeria (landing page)
 
-> Static web site
+Static web site
 
 #### Screenshots of the app
 
@@ -18,24 +18,18 @@
 
 ### Technologies
 
-- React (Gatsby)
+- Gatsby
 - Sass
+- GraphQL
 
 ## Getting started
 
-
   App requires to have node (4.x.x) and npm (2.x.x) installed.
 
-
 #### Start with installing the dependencies:
-
 
   Run `npm install` to install all required packages.
 
 #### Running:
 
   Use `gatsby develop` to start the dev server.
-
-
-
-
