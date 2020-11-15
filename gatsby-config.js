@@ -5,7 +5,7 @@ module.exports = {
     siteUrl: "https://quirky-northcutt-2862d8.netlify.app",
     image: "/img-seo.png",
     twitterUsername: "@userName",
-    author: "Code",
+    author: "SC",
   },
   plugins: [
     `gatsby-transformer-sharp`,

@@ -1,7 +1,7 @@
 {
-  "name": "study-project-static-web-site-client",
+  "name": "gatsby-client",
   "private": true,
-  "description": "A static website created by gatsby",
+  "description": "A static website built on the Gatsby",
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
