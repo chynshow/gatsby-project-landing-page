@@ -14,13 +14,13 @@ import SEO from "../components/Common/SEO"
 
 const About = ({
   data: {
-    img01,
-    img02,
-    aboutInfo: {
-      descAboutProducts,
-      descAboutUs,
-      titleAboutProducts,
-      titleAboutUs,
+    content: {
+      imgPizzeria,
+      imgProducts,
+      titlePizzeria,
+      titleProducts,
+      descPizzeria,
+      descProducts,
     },
   },
 }) => {
@@ -35,27 +35,21 @@ const About = ({
           <div className="c-about__inner">
             <div className="c-about__us">
               <div className="c-about__desc-container">
-                <Title>{titleAboutUs}</Title>
+                <Title>{titlePizzeria}</Title>
                 <Stars />
-                <Paragraph>{descAboutUs}</Paragraph>
+                <Paragraph>{descPizzeria}</Paragraph>
               </div>
               <div className="c-about__img-container">
-                <Image
-                  className="c-about__img"
-                  fluid={img01.childImageSharp.fluid}
-                />
+                <Image className="c-about__img" fluid={imgPizzeria.fluid} />
               </div>
             </div>
             <div className="c-about__products">
               <div className="c-about__img-container">
-                <Image
-                  className="c-about__img"
-                  fluid={img02.childImageSharp.fluid}
-                />
+                <Image className="c-about__img" fluid={imgProducts.fluid} />
               </div>
               <div className="c-about__desc-container">
-                <Title>{titleAboutProducts}</Title>
-                <Paragraph>{descAboutProducts}</Paragraph>
+                <Title>{titleProducts}</Title>
+                <Paragraph>{descProducts}</Paragraph>
                 <Producers />
               </div>
             </div>
@@ -86,25 +80,21 @@ const About = ({
 
 export const data = graphql`
   {
-    img01: file(relativePath: { eq: "about-img-640*744.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+    content: datoCmsAboutpage {
+      titlePizzeria: titleaboutproducts
+      titleProducts: titleaboutpizzeria
+      descPizzeria: descriptionaboutpizzeria
+      descProducts: descriptionaboutproducts
+      imgPizzeria: imgaboutpizzeria {
+        fluid(imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
-    }
-    img02: file(relativePath: { eq: "about-img-640*959.jpg" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+      imgProducts: imgaboutproducts {
+        fluid(imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
-    }
-    aboutInfo: aboutPageJson {
-      titleAboutUs
-      titleAboutProducts
-      descAboutUs
-      descAboutProducts
     }
   }
 `
