@@ -1,3 +1,4 @@
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: "Włoszczyzna",
@@ -24,7 +25,7 @@ module.exports = {
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: `0a42f7ca3d94f1b56d221a537436d6`,
+        apiToken: process.env.DATO_API_TOKEN,
       },
     },
   ],
