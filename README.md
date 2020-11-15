@@ -18,9 +18,15 @@ Static web site
 
 ### Technologies
 
+#### Frontend (Hosted by www.netlify.com)
+
 - Gatsby
-- Sass
+- Sass (BEM)
 - GraphQL
+
+#### Backend
+
+- Headless CMS Dato
 
 ## Getting started
 
@@ -32,4 +38,5 @@ Static web site
 
 #### Running:
 
+  Replace DATO_API_TOKEN value in config/config.env file with your hedless CMS token.
   Use `gatsby develop` to start the dev server.
