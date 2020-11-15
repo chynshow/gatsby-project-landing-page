@@ -38,5 +38,5 @@ Static web site
 
 #### Running:
 
-  Replace DATO_API_TOKEN value in config/config.env file with your hedless CMS token.
+  Replace DATO_API_TOKEN value in config/config.env file with your headless CMS token.
   Use `gatsby develop` to start the dev server.
