@@ -16,25 +16,18 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Delivery = ({ className, setShowDeliveryInfo, showDeliveryInfo }) => {
   const {
-    deliveryInfo: { openHours, phoneNum },
-    deliveryZonesInfo: {
-      deliveryZones: { title, url },
-    },
+    deliveryInfo: { openhours, phonenumber },
+    deliveryPage: { title, subtitle, deliveryzones },
   } = useStaticQuery(graphql`
     {
-      deliveryInfo: heroPageJson {
-        openHours
-        phoneNum
-        location {
-          title
-          url
-        }
+      deliveryInfo: datoCmsHomepage {
+        phonenumber
+        openhours
       }
-      deliveryZonesInfo: menuPageJson {
-        deliveryZones {
-          title
-          url
-        }
+      deliveryPage: datoCmsDeliverypage {
+        title
+        subtitle
+        deliveryzones
       }
     }
   `)
@@ -47,7 +40,7 @@ const Delivery = ({ className, setShowDeliveryInfo, showDeliveryInfo }) => {
       >
         <FontAwesomeIcon className="c-icon" icon={faTimes} />
       </Button>
-      <Title>Order Now.</Title>
+      <Title>{title}</Title>
       <Truck
         className={
           showDeliveryInfo
@@ -55,22 +48,22 @@ const Delivery = ({ className, setShowDeliveryInfo, showDeliveryInfo }) => {
             : "c-delivery__icon-truck"
         }
       />
-      <SubTitle>Best pizza means - hot pizza.</SubTitle>
+      <SubTitle>{subtitle}</SubTitle>
       <div className="c-delivery__info">
         <InfoBox
           className="c-delivery__info-box"
           icon={<FontAwesomeIcon size="2x" icon={faClock} />}
-          text={openHours}
+          text={openhours}
         />
         <InfoBox
           className="c-delivery__info-box"
           icon={<FontAwesomeIcon size="2x" icon={faMobile} />}
-          text={phoneNum}
+          text={phonenumber}
         />
         <LinkBox
           icon={<FontAwesomeIcon size="2x" icon={faMapMarkedAlt} />}
-          href={url}
-          text={title}
+          href={deliveryzones}
+          text="Strefy dowozu"
         />
       </div>
     </section>

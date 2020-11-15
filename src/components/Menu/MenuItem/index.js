@@ -11,7 +11,7 @@ const MenuItem = ({ data: { title, description, price }, filter }) => {
       <SubTitle className="c-menu__item-title">{title}</SubTitle>
       <div className="c-menu__item-container">
         <span className="c-menu__item-desc">{description}</span>
-        <span className="c-menu__item-price">{price}$</span>
+        <span className="c-menu__item-price">{price} $</span>
       </div>
     </div>
   )

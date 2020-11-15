@@ -14,11 +14,11 @@ const MenuItems = ({ filter }) => {
     menuInfo: { menu },
   } = useStaticQuery(graphql`
     {
-      menuInfo: menuPageJson {
-        menu {
+      menuInfo: allDatoCmsProduct {
+        menu: nodes {
           category
           description
-          filterLabel
+          firterlabel
           title
           price
         }
@@ -27,7 +27,7 @@ const MenuItems = ({ filter }) => {
   `)
 
   const menuItemsFiltered =
-    filter !== "" ? menu.filter(item => item.filterLabel === filter) : menu
+    filter !== "" ? menu.filter(item => item.firterlabel === filter) : menu
 
   return (
     <div className="c-menu__items">
@@ -40,7 +40,7 @@ const MenuItems = ({ filter }) => {
           />
         }
         menuItems={menuItemsFiltered}
-        filterLabel="Pizza"
+        filterLabel="pizza"
         filter={filter}
       />
       <MenuSection
@@ -55,7 +55,7 @@ const MenuItems = ({ filter }) => {
           <FontAwesomeIcon className="c-menu__section-icon" icon={faLeaf} />
         }
         menuItems={menuItemsFiltered}
-        filterLabel="Insalata"
+        filterLabel="insalata"
         filter={filter}
       />
       <MenuSection
@@ -64,7 +64,7 @@ const MenuItems = ({ filter }) => {
           <FontAwesomeIcon className="c-menu__section-icon" icon={faCarrot} />
         }
         menuItems={menuItemsFiltered}
-        filterLabel="Antipasto"
+        filterLabel="antipasto"
         filter={filter}
       />
       <MenuSection
@@ -73,7 +73,7 @@ const MenuItems = ({ filter }) => {
           <FontAwesomeIcon className="c-menu__section-icon" icon={faPlus} />
         }
         menuItems={menuItemsFiltered}
-        filterLabel="Dodatki"
+        filterLabel="dodatki"
         filter={filter}
       />
     </div>

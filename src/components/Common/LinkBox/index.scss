@@ -4,6 +4,7 @@ a {
 }
 
 .c-link-box {
+  cursor: pointer;
   @extend .c-info-box;
 
   &__text {

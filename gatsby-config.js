@@ -12,7 +12,6 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-fontawesome-css`,
-    `gatsby-transformer-json`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
@@ -20,19 +19,6 @@ module.exports = {
       options: {
         name: `imgs`,
         path: `${__dirname}/src/assets/imgs`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `logos`,
-        path: `${__dirname}/src/assets/logos`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/assets/data/`,
       },
     },
     {

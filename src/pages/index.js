@@ -18,12 +18,13 @@ import SEO from "../components/Common/SEO"
 
 const Home = ({
   data: {
-    heroInfo: {
-      openHours,
-      phoneNum,
-      location: { title, url },
+    datoCmsHomepage: {
+      bgimage,
+      phonenumber,
+      openhours,
+      locationtitle,
+      locationurl,
     },
-    bgImg: { childImageSharp },
   },
 }) => {
   return (
@@ -32,7 +33,7 @@ const Home = ({
         title="Home"
         description="This is home page of pizzeria Włoszczyzna"
       />
-      <BackgroundImage className="c-home__bg-img" fluid={childImageSharp.fluid}>
+      <BackgroundImage className="c-home__bg-img" fluid={bgimage.fluid}>
         <section className="c-home">
           <div className="c-home__inner">
             <Logo className="c-home__logo" />
@@ -40,17 +41,17 @@ const Home = ({
             <div className="c-home__info-container">
               <InfoBox
                 icon={<FontAwesomeIcon icon={faClock} size="2x" />}
-                text={openHours}
+                text={openhours}
               />
               <InfoBox
                 icon={<FontAwesomeIcon icon={faMobile} size="2x" />}
-                text={phoneNum}
+                text={phonenumber}
               />
 
               <LinkBox
                 icon={<FontAwesomeIcon icon={faMapMarkerAlt} size="2x" />}
-                href={url}
-                text={title}
+                href={locationurl}
+                text={locationtitle}
               />
             </div>
             <ArrowLink
@@ -79,20 +80,16 @@ const Home = ({
 
 export const data = graphql`
   {
-    heroInfo: heroPageJson {
-      openHours
-      phoneNum
-      location {
-        title
-        url
-      }
-    }
-    bgImg: file(relativePath: { eq: "hero-bg-1920*2320.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 1920, quality: 100) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+    datoCmsHomepage {
+      bgimage {
+        fluid(maxWidth: 1900, imgixParams: { fm: "jpg", auto: "compress" }) {
+          ...GatsbyDatoCmsFluid
         }
       }
+      phonenumber
+      openhours
+      locationtitle
+      locationurl
     }
   }
 `

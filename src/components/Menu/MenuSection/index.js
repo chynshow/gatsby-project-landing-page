@@ -22,4 +22,4 @@ const MenuSection = ({ icon, menuItems, title, filterLabel, filter }) => {
   )
 }
 
-export default MenuSection
+export default React.memo(MenuSection)
